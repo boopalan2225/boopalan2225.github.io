@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service – Relic: Mosaic Nonograms</title>
+  <meta name="description" content="Terms of Service for Relic: Mosaic Nonograms (com.clevercorner.relic) by Clever Corner. The agreement between player and game in plain, readable words.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:            #0b1018;
+      --bg2:           #0f141c;
+      --surface:       #161d2a;
+      --surface-hi:    #1c2535;
+      --border:        #1f2e43;
+      --text:          #e4eaf3;
+      --muted:         #7f93b0;
+      --accent:        #38bdf8;
+      --accent-dim:    rgba(56,189,248,.13);
+      --accent-glow:   rgba(56,189,248,.06);
+      --green:         #34d399;
+      --green-dim:     rgba(52,211,153,.12);
+      --red:           #f87171;
+      --red-dim:       rgba(248,113,113,.11);
+      --amber:         #fbbf24;
+      --amber-dim:     rgba(251,191,36,.11);
+      --radius:        14px;
+      --radius-sm:     8px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg:            #f1f5fb;
+        --bg2:           #e8edf6;
+        --surface:       #ffffff;
+        --surface-hi:    #f8fafc;
+        --border:        #dde4ef;
+        --text:          #0d1829;
+        --muted:         #5a6b84;
+        --accent:        #0284c7;
+        --accent-dim:    rgba(2,132,199,.10);
+        --accent-glow:   rgba(2,132,199,.04);
+        --green:         #059669;
+        --green-dim:     rgba(5,150,105,.09);
+        --red:           #dc2626;
+        --red-dim:       rgba(220,38,38,.08);
+        --amber:         #d97706;
+        --amber-dim:     rgba(217,119,6,.09);
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 40px 16px 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 700px; margin: 0 auto; }
+
+    .hero {
+      text-align: center;
+      padding: 48px 24px 40px;
+      background: linear-gradient(160deg, var(--surface-hi) 0%, var(--surface) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% -10%, var(--accent-glow), transparent);
+      pointer-events: none;
+    }
+    .hero-icon { font-size: 2.4rem; margin-bottom: 10px; display: block; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .hero-app  { font-size: 0.95rem; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+    .hero-pkg  { font-size: 0.8rem; color: var(--muted); font-family: 'SF Mono','Fira Code',monospace; margin-bottom: 10px; }
+    .hero-date { font-size: 0.82rem; color: var(--muted); }
+
+    nav.tabs { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+    nav.tabs a {
+      text-decoration: none; font-size: 0.85rem; font-weight: 700;
+      padding: 7px 18px; border-radius: var(--radius-sm);
+      color: var(--muted); border: 1px solid transparent; transition: all .2s;
+    }
+    nav.tabs a:hover { color: var(--text); border-color: var(--border); background: var(--surface-hi); }
+    nav.tabs a.active { color: var(--accent); background: var(--accent-dim); border-color: rgba(56,189,248,.25); }
+
+    .section-label {
+      font-size: 0.72rem; font-weight: 800; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted); margin: 32px 0 10px 4px;
+    }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 24px;
+      margin-bottom: 10px; position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; border-radius: 3px 0 0 3px; opacity: 0;
+    }
+    .card.accent-left::before { background: var(--accent); opacity: 1; }
+    .card.green-left::before  { background: var(--green); opacity: 1; }
+    .card.red-left::before    { background: var(--red); opacity: 1; }
+    .card.amber-left::before  { background: var(--amber); opacity: 1; }
+    .card.highlight {
+      background: linear-gradient(135deg, var(--surface-hi) 0%, var(--surface) 100%);
+      border-color: rgba(56,189,248,.22);
+    }
+
+    .card-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+    .card-icon {
+      flex-shrink: 0; width: 34px; height: 34px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; background: var(--accent-dim);
+    }
+    .card-icon.green  { background: var(--green-dim); }
+    .card-icon.red    { background: var(--red-dim); }
+    .card-icon.amber  { background: var(--amber-dim); }
+    .card h2 { font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.3; padding-top: 6px; }
+    .card p  { font-size: 0.9rem; color: var(--muted); margin-bottom: 8px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    ul.bl { list-style: none; margin: 8px 0 4px; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    ul.bl li { font-size: 0.9rem; color: var(--muted); display: flex; gap: 9px; align-items: flex-start; }
+    ul.bl li .dot { flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-top: 7px; }
+    ul.bl.red-dots   li .dot { background: var(--red); }
+    ul.bl.green-dots li .dot { background: var(--green); }
+    ul.bl.amber-dots li .dot { background: var(--amber); }
+
+    /* rules: X bullets */
+    .rule-list { list-style: none; margin: 8px 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    .rule-list li {
+      font-size: 0.88rem; color: var(--muted);
+      display: flex; gap: 9px; align-items: flex-start;
+      padding: 8px 10px; border-radius: var(--radius-sm); background: var(--red-dim);
+      border: 1px solid rgba(248,113,113,.12);
+    }
+    .rule-list li .x { flex-shrink: 0; color: var(--red); font-weight: 800; font-size: 0.75rem; margin-top: 2px; }
+
+    /* ad-free options */
+    .option-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px;
+    }
+    .option-box {
+      border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 10px 12px; background: var(--surface-hi);
+    }
+    .option-box .opt-label { font-size: 0.78rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 4px; }
+    .option-box .opt-desc  { font-size: 0.82rem; color: var(--muted); }
+
+    /* virtual items badge */
+    .virtual-note {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--amber-dim); border: 1px solid rgba(251,191,36,.18);
+      border-radius: var(--radius-sm); padding: 10px 12px; margin-top: 10px;
+      font-size: 0.82rem; color: var(--muted);
+    }
+
+    a.lnk { color: var(--accent); text-decoration: none; font-weight: 600; border-bottom: 1px solid rgba(56,189,248,.35); transition: border-color .15s; }
+    a.lnk:hover { border-color: var(--accent); }
+
+    footer { text-align: center; margin-top: 44px; padding: 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+    .footer-quote { font-style: italic; color: var(--muted); font-size: 0.88rem; margin-bottom: 10px; }
+    .footer-copy  { font-size: 0.78rem; color: var(--muted); opacity: 0.65; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Hero -->
+  <header class="hero">
+    <span class="hero-icon">⚖️</span>
+    <div class="badge">📋 Terms of Service</div>
+    <h1>Terms of Service</h1>
+    <div class="hero-app">Relic: Mosaic Nonograms</div>
+    <div class="hero-pkg">com.clevercorner.relic &nbsp;·&nbsp; Clever Corner</div>
+    <div class="hero-date">Last updated 23 November 2026</div>
+    <nav class="tabs">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html" class="active">Terms of Service</a>
+    </nav>
+  </header>
+
+  <!-- Summary -->
+  <div class="card highlight accent-left">
+    <div class="card-head">
+      <div class="card-icon">🗒️</div>
+      <h2>The short version</h2>
+    </div>
+    <p>Relic is a game, and games should be fun.</p>
+    <p>Play it for yourself, be decent, do not break it or sneak around the ads or the purchase, and remember that coins are pretend. By installing or playing Relic you agree to these terms. If you do not, no hard feelings. Just uninstall.</p>
+  </div>
+
+  <div class="section-label">About the game</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🏺</div>
+      <h2>What Relic is</h2>
+    </div>
+    <p>Relic is a nonogram puzzle game from Clever Corner ("we", "us"). You solve number-clue grids, and every plot you restore uncovers a piece of a hidden mosaic.</p>
+    <p>These terms cover the Relic app for Android. You also remain bound by Google Play's terms, which sit above ours.</p>
+  </div>
+
+  <div class="card green-left">
+    <div class="card-head">
+      <div class="card-icon green">🎟️</div>
+      <h2>Your licence</h2>
+    </div>
+    <p>We give you a personal, non-exclusive, non-transferable, revocable licence to install Relic and play it on your own devices, for your own enjoyment and not for business use.</p>
+    <p>The app is licensed, not sold. You get the right to play it, not to own it.</p>
+    <p>To use Relic you must be old enough to agree to these terms where you live, or have a parent or guardian who agrees for you, and you must meet Google Play's own age rules.</p>
+  </div>
+
+  <div class="section-label">House rules</div>
+
+  <div class="card red-left">
+    <div class="card-head">
+      <div class="card-icon red">⛔</div>
+      <h2>House rules at the dig site</h2>
+    </div>
+    <p>Please do not:</p>
+    <ul class="rule-list">
+      <li><span class="x">✕</span><span>Reverse-engineer, decompile or copy the app, except where the law says you may</span></li>
+      <li><span class="x">✕</span><span>Tamper with your save file, coins, hearts, hints or ad-free status, or fake a purchase</span></li>
+      <li><span class="x">✕</span><span>Get around ads or the purchase by any trick</span></li>
+      <li><span class="x">✕</span><span>Use bots or automation to farm rewards</span></li>
+      <li><span class="x">✕</span><span>Copy, resell or republish the app, its puzzles or its artwork</span></li>
+      <li><span class="x">✕</span><span>Use Relic for anything unlawful</span></li>
+    </ul>
+    <p style="margin-top:10px;">It is a single-player game, so cheating your own puzzle is mostly cheating yourself. Cheating the systems around it is where we draw the line.</p>
+  </div>
+
+  <div class="section-label">In-game items</div>
+
+  <div class="card amber-left">
+    <div class="card-head">
+      <div class="card-icon amber">🪙</div>
+      <h2>Coins, hearts and hints</h2>
+    </div>
+    <p>Coins, hearts and hints are virtual game items. You earn them by playing, and you spend them inside Relic.</p>
+    <div class="virtual-note">
+      ⚠️ They have no cash value, are not your property, and cannot be sold, swapped, transferred or refunded.
+    </div>
+    <p style="margin-top:10px;">We may adjust prices, rewards and limits in updates to keep the game balanced.</p>
+  </div>
+
+  <div class="section-label">Ads &amp; purchases</div>
+
+  <div class="card accent-left">
+    <div class="card-head">
+      <div class="card-icon">📢</div>
+      <h2>Ads and ad-free</h2>
+    </div>
+    <p>Relic is free to play and paid for by ads. Some videos are optional and give a reward if you watch them to the end.</p>
+    <p>You have two ways to quiet things down:</p>
+    <div class="option-row">
+      <div class="option-box">
+        <div class="opt-label">⏱️ Watch &amp; Bank</div>
+        <div class="opt-desc">Watch ads to bank ad-free time, up to the limit shown in the app.</div>
+      </div>
+      <div class="option-box">
+        <div class="opt-label">✨ Go Ad-Free</div>
+        <div class="opt-desc">Make a one-time purchase to go ad-free for good.</div>
+      </div>
+    </div>
+    <p style="margin-top:12px;">The purchase is handled by Google Play. The price is shown in your currency before you buy, it is not a subscription, and it is tied to your Google account. Refunds follow Google Play's refund policy. Ad-free changes how often you see ads and how quickly things refill. It never changes the puzzles themselves.</p>
+  </div>
+
+  <div class="section-label">Your progress &amp; content</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">💾</div>
+      <h2>Your progress</h2>
+    </div>
+    <p>Your progress is saved on your device. There are no accounts, so if you clear the app's data or uninstall without a device backup, we cannot restore it.</p>
+    <p>We will do our best never to wipe progress in an update, and we will tell you if we ever have to.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🎨</div>
+      <h2>The artwork and everything else</h2>
+    </div>
+    <p>Relic's code, puzzles, text, design and illustrations belong to Clever Corner or the people who license them to us. Using Relic does not give you any rights to them.</p>
+    <p>The mosaics are inspired by the art of ancient and historic cultures. They are our own interpretations, not reproductions of any particular museum object, and Relic is not connected to or endorsed by any museum. We aim to treat every culture we depict with respect.</p>
+    <p>Google, Google Play and Android are trademarks of Google LLC.</p>
+  </div>
+
+  <div class="section-label">Third parties &amp; notifications</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🔗</div>
+      <h2>Other people's services</h2>
+    </div>
+    <p>Relic works with Google services such as AdMob, Google Play, Play Games and Firebase. They have their own terms and privacy policies, and we are not responsible for how they behave.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🔔</div>
+      <h2>Reminders</h2>
+    </div>
+    <p>Dig reminders are optional and always under your control. Allow them or not, and switch them off any time in Relic or in Android's settings. Our <a class="lnk" href="privacy.html">Privacy Policy</a> explains how they work.</p>
+  </div>
+
+  <div class="section-label">Availability &amp; wellbeing</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🔄</div>
+      <h2>Updates and availability</h2>
+    </div>
+    <p>We may update Relic, add or remove features, retire old versions or, one day, stop offering the game. Relic is mostly playable offline, but ads, the purchase and Play services need a connection.</p>
+    <p>We will try to give you fair notice of big changes, but we cannot promise Relic will always be available.</p>
+  </div>
+
+  <div class="card green-left">
+    <div class="card-head">
+      <div class="card-icon green">🌿</div>
+      <h2>Play comfortably</h2>
+    </div>
+    <p>Take breaks, rest your eyes and stretch your thumbs. Relic is not a substitute for sleep, water or a real archaeology degree. Please do not play while you should be doing something that needs your full attention, like driving, crossing a road or operating a trowel near anything valuable.</p>
+  </div>
+
+  <div class="section-label">Legal bits</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">⚠️</div>
+      <h2>No guarantees</h2>
+    </div>
+    <p>We work hard to make Relic good, but it is provided "as is" and "as available". We do not promise that it will be free of bugs, always run without interruption, or suit every device.</p>
+    <p>Nothing here takes away consumer rights that the law says you cannot give up.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">⚖️</div>
+      <h2>Limits on our responsibility</h2>
+    </div>
+    <p>As far as the law allows, we are not responsible for indirect or incidental loss, or for loss of progress, data or virtual items. Our total responsibility to you for anything connected with Relic is limited to what you paid us for it in the 12 months before the claim.</p>
+    <p>Nothing in these terms limits responsibility that cannot be limited by law, such as liability for fraud, or for death or personal injury caused by negligence.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🚪</div>
+      <h2>Ending things</h2>
+    </div>
+    <p>You can stop any time by uninstalling Relic. We may suspend or end your access if you break these terms or the law. Anything in these terms that should reasonably outlast that — such as our rights in the artwork and the limits on our responsibility — does.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">📝</div>
+      <h2>Changes to these terms</h2>
+    </div>
+    <p>We may update these terms, and when we do the date at the top changes. If you keep playing after an update, you accept the new version. If a change matters, we will say so in the update notes.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🌐</div>
+      <h2>Which laws apply</h2>
+    </div>
+    <p>These terms follow the laws of the country where Clever Corner is established, and disputes go to the courts there. This does not take away any protection you have under the consumer law of the place you live.</p>
+  </div>
+
+  <div class="card accent-left">
+    <div class="card-head">
+      <div class="card-icon">💬</div>
+      <h2>Questions</h2>
+    </div>
+    <p>The developer contact details are on Relic's page on Google Play. Tap <strong style="color:var(--text);">Rate Relic</strong> in Settings to open it.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-quote">"Thank you for reading the small print. Almost nobody does. Now go dig something up."</div>
+    <div class="footer-copy">&copy; 2026 Clever Corner. All rights reserved.</div>
+  </footer>
+
+</div>
+</body>
+</html>

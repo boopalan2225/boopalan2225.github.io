@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Relic: Mosaic Nonograms</title>
+  <meta name="description" content="Privacy Policy for Relic: Mosaic Nonograms (com.clevercorner.relic) by Clever Corner. What data we store, what we don't, and what third-party services are involved.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ── Tokens ───────────────────────────────────────────────────────── */
+    :root {
+      --bg:            #0b1018;
+      --bg2:           #0f141c;
+      --surface:       #161d2a;
+      --surface-hi:    #1c2535;
+      --border:        #1f2e43;
+      --text:          #e4eaf3;
+      --muted:         #7f93b0;
+      --accent:        #38bdf8;
+      --accent-dim:    rgba(56,189,248,.13);
+      --accent-glow:   rgba(56,189,248,.06);
+      --green:         #34d399;
+      --green-dim:     rgba(52,211,153,.12);
+      --red:           #f87171;
+      --red-dim:       rgba(248,113,113,.11);
+      --radius:        14px;
+      --radius-sm:     8px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg:            #f1f5fb;
+        --bg2:           #e8edf6;
+        --surface:       #ffffff;
+        --surface-hi:    #f8fafc;
+        --border:        #dde4ef;
+        --text:          #0d1829;
+        --muted:         #5a6b84;
+        --accent:        #0284c7;
+        --accent-dim:    rgba(2,132,199,.10);
+        --accent-glow:   rgba(2,132,199,.04);
+        --green:         #059669;
+        --green-dim:     rgba(5,150,105,.09);
+        --red:           #dc2626;
+        --red-dim:       rgba(220,38,38,.08);
+      }
+    }
+
+    /* ── Reset ────────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Base ─────────────────────────────────────────────────────────── */
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 40px 16px 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 700px; margin: 0 auto; }
+
+    /* ── Hero header ──────────────────────────────────────────────────── */
+    .hero {
+      text-align: center;
+      padding: 48px 24px 40px;
+      background: linear-gradient(160deg, var(--surface-hi) 0%, var(--surface) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% -10%, var(--accent-glow), transparent);
+      pointer-events: none;
+    }
+    .hero-icon {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .hero-app {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .hero-pkg {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      margin-bottom: 10px;
+    }
+    .hero-date {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ── Tab nav ──────────────────────────────────────────────────────── */
+    nav.tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    nav.tabs a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 7px 18px;
+      border-radius: var(--radius-sm);
+      color: var(--muted);
+      border: 1px solid transparent;
+      transition: all .2s;
+    }
+    nav.tabs a:hover {
+      color: var(--text);
+      border-color: var(--border);
+      background: var(--surface-hi);
+    }
+    nav.tabs a.active {
+      color: var(--accent);
+      background: var(--accent-dim);
+      border-color: rgba(56,189,248,.25);
+    }
+
+    /* ── Section label ────────────────────────────────────────────────── */
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 32px 0 10px 4px;
+    }
+
+    /* ── Cards ────────────────────────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      border-radius: 3px 0 0 3px;
+      opacity: 0;
+    }
+    .card.accent-left::before { opacity: 1; }
+    .card.green-left::before  { background: var(--green); opacity: 1; }
+    .card.red-left::before    { background: var(--red); opacity: 1; }
+
+    /* summary / highlight card */
+    .card.highlight {
+      background: linear-gradient(135deg, var(--surface-hi) 0%, var(--surface) 100%);
+      border-color: rgba(56,189,248,.22);
+    }
+    @media (prefers-color-scheme: light) {
+      .card.highlight { border-color: rgba(2,132,199,.18); }
+    }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .card-icon {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      background: var(--accent-dim);
+    }
+    .card-icon.green { background: var(--green-dim); }
+    .card-icon.red   { background: var(--red-dim); }
+
+    .card h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      padding-top: 6px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .card p:last-child { margin-bottom: 0; }
+
+    /* ── Bullet lists ─────────────────────────────────────────────────── */
+    ul.bl {
+      list-style: none;
+      margin: 8px 0 4px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    ul.bl li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+    }
+    ul.bl li .dot {
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 7px;
+    }
+    ul.bl.red-dots li .dot  { background: var(--red); }
+    ul.bl.green-dots li .dot { background: var(--green); }
+
+    /* ── "Never" shield block ─────────────────────────────────────────── */
+    .shield-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .shield-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red-dim);
+      border: 1px solid rgba(248,113,113,.15);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .shield-item .x {
+      font-size: 0.75rem;
+      color: var(--red);
+      font-weight: 800;
+    }
+
+    /* ── Permissions chips ────────────────────────────────────────────── */
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--surface-hi);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+
+    /* ── Google services grid ─────────────────────────────────────────── */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .service-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      background: var(--surface-hi);
+    }
+    .service-item .svc-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+    .service-item .svc-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── Rights rows ──────────────────────────────────────────────────── */
+    .rights-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .rights-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .rights-row strong { color: var(--text); font-weight: 700; display: block; margin-bottom: 2px; font-size: 0.85rem; }
+    .rights-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── Links ────────────────────────────────────────────────────────── */
+    a.lnk {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(56,189,248,.35);
+      transition: border-color .15s;
+    }
+    a.lnk:hover { border-color: var(--accent); }
+
+    /* ── Footer ───────────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      margin-top: 44px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .footer-quote {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--muted);
+      opacity: 0.65;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Hero -->
+  <header class="hero">
+    <span class="hero-icon">🏺</span>
+    <div class="badge">🔒 Privacy Policy</div>
+    <h1>Privacy Policy</h1>
+    <div class="hero-app">Relic: Mosaic Nonograms</div>
+    <div class="hero-pkg">com.clevercorner.relic &nbsp;·&nbsp; Clever Corner</div>
+    <div class="hero-date">Last updated 23 November 2026</div>
+    <nav class="tabs">
+      <a href="privacy.html" class="active">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+  </header>
+
+  <!-- Summary -->
+  <div class="card highlight accent-left">
+    <div class="card-head">
+      <div class="card-icon">🗒️</div>
+      <h2>The short version</h2>
+    </div>
+    <p>Relic is a puzzle game, not a data vacuum.</p>
+    <p>Your progress lives on your phone. There is no account, no sign-up, and we never ask for your name, email, phone number, contacts, photos, camera, microphone or location.</p>
+    <p>We do use Google services to show ads, catch crashes, and learn which puzzles are too hard. The details are below, and no archaeology degree is required.</p>
+  </div>
+
+  <div class="section-label">About us</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🏷️</div>
+      <h2>Who we are</h2>
+    </div>
+    <p>Relic is made by Clever Corner ("we", "us"). This policy covers the Relic app for Android and nothing else.</p>
+    <p>When it says "you", it means the person holding the phone and holding the brush.</p>
+  </div>
+
+  <div class="section-label">Data on your device</div>
+
+  <div class="card green-left">
+    <div class="card-head">
+      <div class="card-icon green">📱</div>
+      <h2>What stays on your phone</h2>
+    </div>
+    <p>Relic keeps a save file in the app's private storage. It holds:</p>
+    <ul class="bl">
+      <li><span class="dot"></span><span>Which plots you have restored and which expeditions are unlocked</span></li>
+      <li><span class="dot"></span><span>Your coins, hearts and hints</span></li>
+      <li><span class="dot"></span><span>Your Daily Dig streak and calendar</span></li>
+      <li><span class="dot"></span><span>Your ad-free status and any ad-free time left</span></li>
+      <li><span class="dot"></span><span>Your settings, such as theme and reminders</span></li>
+      <li><span class="dot"></span><span>When you last played, so reminders know when to stay quiet</span></li>
+      <li><span class="dot"></span><span>Whether you have already been asked about notifications or a review</span></li>
+    </ul>
+    <p style="margin-top:10px;">This file is not sent to us. We never see it.</p>
+    <p>If Android backup is switched on for your device, Android may copy the file to your Google account so a new phone can pick up where you left off. That copy is handled by Google under Google's own terms.</p>
+  </div>
+
+  <div class="section-label">Data that leaves your device</div>
+
+  <div class="card accent-left">
+    <div class="card-head">
+      <div class="card-icon">📊</div>
+      <h2>Usage and crash reports</h2>
+    </div>
+    <p>We use Google Firebase to understand how Relic is played and to fix it when it breaks.</p>
+    <p><strong style="color:var(--text);font-size:.85rem;">Firebase Analytics</strong> records anonymous events, for example:</p>
+    <ul class="bl">
+      <li><span class="dot"></span><span>Which screens are opened</span></li>
+      <li><span class="dot"></span><span>Puzzles started and finished, how long they took, mistakes made, and hearts and hints used</span></li>
+      <li><span class="dot"></span><span>Coins earned and spent</span></li>
+      <li><span class="dot"></span><span>Whether an ad was shown or watched</span></li>
+      <li><span class="dot"></span><span>Settings you chose, such as theme or ads on or off, and whether you own ad-free</span></li>
+    </ul>
+    <p style="margin-top:10px;"><strong style="color:var(--text);font-size:.85rem;">Firebase Crashlytics</strong> records a crash report when the app falls over: what the app was doing, your device model, Android version and app version.</p>
+    <p>These reports are tied to a random ID that Firebase creates for the app on your device, never to your name or email. We use them to fix bugs and to make puzzles fairer.</p>
+    <p>Relic does not have an in-app switch for analytics. If you would rather not take part, the way out is to uninstall the app.</p>
+  </div>
+
+  <div class="card accent-left">
+    <div class="card-head">
+      <div class="card-icon">📢</div>
+      <h2>Ads</h2>
+    </div>
+    <p>Relic is free because of ads. We use Google AdMob for a banner on the map and puzzle screens, a video between levels, and optional videos you can watch for rewards.</p>
+    <p>To serve and measure ads, AdMob may collect your device's advertising ID, IP address (and the rough location it implies), device and Android details, and how you interact with ads. Ads can be personalised unless you limit that. We do not control or receive that data. <a class="lnk" href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's policies</a> describe it.</p>
+    <p>While you are ad-free, Relic shows no ads.</p>
+    <p>To take control, open Android Settings, then Google, then Ads. There you can reset your advertising ID or opt out of personalised ads.</p>
+  </div>
+
+  <div class="card accent-left">
+    <div class="card-head">
+      <div class="card-icon">⚙️</div>
+      <h2>Google Play services</h2>
+    </div>
+    <p>A few Google Play features are built in. Google runs them, and <a class="lnk" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a> covers what they collect.</p>
+    <div class="service-grid">
+      <div class="service-item">
+        <div class="svc-name">🎮 Play Games</div>
+        <div class="svc-desc">Signing in is optional and only happens if you choose it. Google shows its own consent screen first.</div>
+      </div>
+      <div class="service-item">
+        <div class="svc-name">💳 Play Billing</div>
+        <div class="svc-desc">The one-time ad-free purchase goes through Google Play. Your payment details go to Google. We never see your card number.</div>
+      </div>
+      <div class="service-item">
+        <div class="svc-name">⭐ In-App Review &amp; Update</div>
+        <div class="svc-desc">Google shows its own sheets asking for a rating or offering a new version.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🔔</div>
+      <h2>Reminders</h2>
+    </div>
+    <p>Dig reminders are notifications that your phone makes by itself. There is no server and no push service behind them, and nothing about you is sent anywhere to produce one.</p>
+    <p>Relic sets one quiet alarm on your phone, and when it goes off the app looks at your save file and decides whether a reminder is worth sending. At most one appears a day, and they stop altogether if you do not come back.</p>
+    <p>On Android 13 and newer, Relic asks permission once. You can turn reminders off any time with the Dig reminders switch in Settings or in Android's notification settings.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🧩</div>
+      <h2>Our other creations</h2>
+    </div>
+    <p>Settings lists our other apps. So the list can stay fresh without an app update, Relic asks Firebase Remote Config for it when you open the app. That is an ordinary internet request: Google receives your IP address, the random Firebase ID described above and basic device details. Nothing about how you play is sent with it.</p>
+    <p>The icons are downloaded from a web address in that list, so the server hosting them also sees your IP address, as any website would. Tapping an app opens its page in Google Play. We do not see what you do there.</p>
+  </div>
+
+  <div class="section-label">Permissions</div>
+
+  <div class="card green-left">
+    <div class="card-head">
+      <div class="card-icon green">🔐</div>
+      <h2>Permissions Relic asks for</h2>
+    </div>
+    <div class="chip-row">
+      <div class="chip"><span class="dot"></span>Internet &amp; network state</div>
+      <div class="chip"><span class="dot"></span>Notifications</div>
+      <div class="chip"><span class="dot"></span>Run at start-up</div>
+      <div class="chip"><span class="dot"></span>Vibration</div>
+    </div>
+    <p style="margin-top:12px;font-size:.82rem;line-height:1.5;">
+      <strong style="color:var(--text);">Internet &amp; network state:</strong> to load ads and send the reports above, and to tell an outage from a failed request.<br>
+      <strong style="color:var(--text);">Notifications:</strong> for dig reminders, only if you allow them.<br>
+      <strong style="color:var(--text);">Run at start-up:</strong> so your one pending reminder survives a phone restart.<br>
+      <strong style="color:var(--text);">Vibration:</strong> for the tick under your finger and the thump of a finished line.
+    </p>
+    <p style="margin-top:10px;">That is the whole list. <strong style="color:var(--text);">No location, no contacts, no storage, no camera, no microphone.</strong></p>
+  </div>
+
+  <div class="section-label">What we don't do</div>
+
+  <div class="card red-left">
+    <div class="card-head">
+      <div class="card-icon red">🛡️</div>
+      <h2>What we do not do</h2>
+    </div>
+    <div class="shield-grid">
+      <div class="shield-item"><span class="x">✕</span> Sell your personal information</div>
+      <div class="shield-item"><span class="x">✕</span> Collect your name, email or address</div>
+      <div class="shield-item"><span class="x">✕</span> Track your location</div>
+      <div class="shield-item"><span class="x">✕</span> Read your contacts, photos or files</div>
+      <div class="shield-item"><span class="x">✕</span> Run our own servers storing your play</div>
+    </div>
+    <p style="margin-top:12px;">The only exceptions are the Google services described above, which handle their own data under their own policies.</p>
+  </div>
+
+  <div class="section-label">Retention, rights &amp; security</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🗓️</div>
+      <h2>How long data is kept</h2>
+    </div>
+    <p>Your save file stays on your phone until you clear the app's data or uninstall Relic. Then it is gone, and since we never had a copy, we cannot bring it back.</p>
+    <p>Analytics, crash reports and ad data are kept by Google for a limited time under its retention settings.</p>
+  </div>
+
+  <div class="card green-left">
+    <div class="card-head">
+      <div class="card-icon green">✋</div>
+      <h2>Your choices and rights</h2>
+    </div>
+    <div>
+      <div class="rights-row">
+        <span class="rights-icon">🔔</span>
+        <div><strong>Notifications</strong>Switch off Dig reminders any time in Settings or in Android's notification settings.</div>
+      </div>
+      <div class="rights-row">
+        <span class="rights-icon">📢</span>
+        <div><strong>Ads</strong>Reset your advertising ID or limit personalisation in Android Settings → Google → Ads.</div>
+      </div>
+      <div class="rights-row">
+        <span class="rights-icon">🎮</span>
+        <div><strong>Play Games</strong>Just don't sign in, or sign out in the Play Games app.</div>
+      </div>
+      <div class="rights-row">
+        <span class="rights-icon">💾</span>
+        <div><strong>Your save</strong>Clear the app's data or uninstall to erase all local data.</div>
+      </div>
+    </div>
+    <p style="margin-top:12px;">Depending on where you live (for example under the GDPR, the UK GDPR or California's CCPA) you may have the right to ask what data we hold, to correct or delete it, to object to its use, or to take it with you. We do not keep a profile tied to your name, so there is usually nothing to look up, but if you ask, we will do everything we reasonably can.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">👦</div>
+      <h2>Young diggers</h2>
+    </div>
+    <p>Relic is made for a general audience. It is not designed for children under 13, or under 16 where the law sets that age, and we do not knowingly collect personal information from them.</p>
+    <p>If you think a child has shared personal information with us, tell us and we will sort it out.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🔒</div>
+      <h2>Keeping things safe</h2>
+    </div>
+    <p>Your save file sits in the app's private storage, which Android walls off from other apps. Data that travels to Google's services is protected by Google, including encryption in transit. No system is perfectly secure, and we would not be honest if we promised otherwise.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">🌍</div>
+      <h2>Around the world</h2>
+    </div>
+    <p>Google may process the data described above in countries other than yours, including the United States, using the safeguards Google puts in place for those transfers.</p>
+  </div>
+
+  <div class="section-label">Updates &amp; contact</div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="card-icon">📝</div>
+      <h2>Changes to this policy</h2>
+    </div>
+    <p>If Relic starts collecting something new, we will update this page and its date first. If the change matters, we will say so in the update notes.</p>
+  </div>
+
+  <div class="card accent-left">
+    <div class="card-head">
+      <div class="card-icon">💬</div>
+      <h2>Questions</h2>
+    </div>
+    <p>Ask away. The developer contact details are on Relic's page on Google Play. Tap <strong style="color:var(--text);">Rate Relic</strong> in Settings to open it.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-quote">"Thank you for reading the small print. Almost nobody does. Now go dig something up."</div>
+    <div class="footer-copy">&copy; 2026 Clever Corner. All rights reserved.</div>
+  </footer>
+
+</div>
+</body>
+</html>
